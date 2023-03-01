@@ -15,7 +15,6 @@ def experience_result_main(experience_text):
     return text
     
 if __name__=='__main__':
-    OPENAIKEY = st.secrets["OPENAIKEY"]
     uploaded_file = open('cv_example.txt','r')
     reviewed_experiences = []
     if uploaded_file is not None:
