@@ -1,14 +1,14 @@
 import openai
 from utils import * 
 from constants import *
-openai.api_key = OPENAIKEY
 import streamlit as st
 from io import StringIO
 from PIL import Image
 
 
+
 def general_corrector(prompt, temperature,model = OPENAIMODEL,max_tokens = 20):
-    openai.api_key = OPENAIKEY
+    openai.api_key = st.secrets["OPENAIKEY"]
     res = openai.Completion.create(model=model,prompt=prompt,temperature=temperature,max_tokens=max_tokens)
     return res['choices'][0]['text']
 
